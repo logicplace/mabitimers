@@ -3,7 +3,7 @@
   padding: 2px;
   width: 150px;
   overflow: hidden;
-  font-family: "lucida sans unicode","lucida sans","lucida grande";
+  font-family: "lucida sans unicode","lucida sans","lucida grande", sans-serif;
 }
 .mabiclockheader {
   border-style: dotted dotted double;
