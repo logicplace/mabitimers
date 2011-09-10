@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mabinogi Timers</title>
+    <link rel="stylesheet" type="text/css" href="timers.css" />
+    <script type="text/javascript" src="timers.min.js"></script>
+  </head>
+  <body>
+    <div class="mgdiv" id="mgdiv_en_na" style="float: left;">
+      <h5 class="mabiclockheader">Time</h5>
+
+      <table style="text-align: left;" class="clocktable">
+        <tbody>
+          <tr id="gametimerow">
+            <td id="lGameTime" class="caption"> Erinn Time </td>
+            <td class="value" id="tGameTime">12:34 </td>
+          </tr>
+          <tr id="realtimerow1">
+            <td id="lrealtime1" class="caption"> Local </td>
+            <td id="trealtime1" class="value"> 56:78 </td>
+          </tr>
+          <tr id="realtimerow2">
+            <td id="lrealtime2" class="caption"> Server </td>
+            <td id="trealtime2" class="value">90:00 </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="mabiclockheader">Moongate
+        [<span class="mgmore" onClick="addRow('mgtblbody0','mg');"> +
+        </span>/<span class="mgless" onClick="removeRow();"> - </span>]</h5>
+
+      <table style="text-align: left;" class="gatetable" id="mgtable0">
+        <tbody id="mgtblbody0">
+          <tr id="mgRow0">
+            <td class="mglabel2" id="mgtm0">11:11</td>
+            <td class="mgtext" id="mgtxt0">Tir Chonaill</td>
+          </tr>
+          <tr id="mgRow1">
+            <td class="mglabel2" id="mgtm1">12:22</td>
+            <td class="mgtext" id="mgtxt1">Dunbarton<br/>
+            </td>
+          </tr>
+          <tr id="mgRow2">
+            <td class="mglabel2" id="mgtm2">13:33</td>
+            <td class="mgtext" id="mgtxt2">Emain Macha</td>
+          </tr>
+          <tr id="mgRow3">
+            <td class="mglabel2" id="mgtm3">14:44</td>
+            <td class="mgtext" id="mgtxt3">Bangor</td>
+          </tr>
+          <tr id="mgRow4">
+            <td class="mglabel2" id="mgtm4">14:44</td>
+            <td class="mgtext" id="mgtxt4">Emain Macha<br/>
+            </td>
+          </tr>
+          <tr id="mgRow5">
+            <td class="mglabel2" id="mgtm5">16:66</td>
+            <td class="mgtext" id="mgtxt5">Emain Macha</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p id="mgceo">Ceo in <span class="mgtext" id="mgtxtceo"> days.</span></p>
+
+      <h5 class="mabiclockheader">Price
+        [<span class="mgmore" onClick="addRow('prtblbody0','pr');"> +
+        </span>/<span class="mgless" onClick="removeRow1();"> - </span>]</h5>
+
+      <table style="text-align: left;" class="gatetable" id="prtable0">
+        <tbody id="prtblbody0">
+          <tr id="prRow0">
+            <td class="mglabel2" id="prtm0">11:11</td>
+            <td class="mgtext" id="prtxt0">Tir Chonaill</td>
+          </tr>
+          <tr id="prRow1">
+            <td class="mglabel2" id="prtm1">12:22</td>
+            <td class="mgtext" id="prtxt1">Dunbarton<br/></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h5 class="mabiclockheader">Rua
+        [<span class="mgmore" onClick="addRow('ruatblbody0','rua');"> +
+        </span>/<span class="mgless" onClick="removeRow2();"> - </span>]</h5>
+
+      <table style="text-align: left;" class="gatetable" id="Table1">
+        <tbody id="ruatblbody0">
+          <tr id="ruaRow0">
+            <td class="mglabel2" id="ruatm0">11:11</td>
+            <td class="mgtext" id="ruatxt0">Resting</td>
+          </tr>
+          <tr id="ruaRow1">
+            <td class="mglabel2" id="ruatm1">12:22</td>
+            <td class="mgtext" id="ruatxt1">Working<br/></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p id="footer">Made by Kakurady<br/>
+        Rua by Huijun<br/>
+        Adjust your system time to match <b>your</b> timezone for the timer to work.</p>
+    </div>
+
+    <p style="clear: both;"></p>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+.mgdiv {
+  border-width: 1px;
+  padding: 2px;
+  width: 150px;
+  overflow: hidden;
+  font-family: "lucida sans unicode","lucida sans","lucida grande";
+}
+.mabiclockheader {
+  border-style: dotted dotted double;
+  border-width: 1px 1px 3px;
+  margin: 10px 2px 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.clocktable {
+  border: 2px groove #f9b418;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+.caption {
+  border-style: none;
+  text-align: left;
+  overflow: visible;
+  line-height: 8pt;
+  font-size: 8pt;
+  height: 14pt;
+}
+.value {
+  border-style: inset;
+  border-width: 1px;
+  font-weight: normal;
+  font-size: 8pt;
+  text-align: right;
+  color: #2a0000;
+}
+#lGameTime {
+  border-style: none;
+  font-weight: inherit;
+  text-align: left;
+  line-height: 8pt;
+  overflow: visible;
+  width: 40pt;
+  height: 19pt;
+  font-size: 9pt;
+}
+#tGameTime {
+  font-size: 14pt;
+  width: 44pt;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-right: 1px;
+  padding-left: 1px;
+}
+.gatetable {
+  border-style: none;
+  padding: 1px;
+  width: 100%;
+}
+.mglabel {
+  border-style: none;
+  margin-left: 0px;
+  padding-left: 0;
+  font-size: 8pt;
+  overflow: hidden;
+  width: 58px;
+}
+.mglabel2 {
+  border-style: none;
+  margin-left: 0px;
+  padding-left: 0;
+  font-size: 8pt;
+  overflow: hidden;
+  width: 33px;
+}
+.mgtext {
+  border-style: none none dotted;
+  border-bottom: 1px dotted #ceb55d;
+  font-size: 8pt;
+  overflow: hidden;
+  font-style: oblique;
+}
+#mgceo, #footer {
+  font-size: 8pt;
+}
+.mgmore, .mgless {
+  color: #e68219;
+}
+.mgmore:hover, .mgless:hover {
+  color: #774735;
+  cursor: pointer;
+}
