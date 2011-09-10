@@ -108,84 +108,6 @@ var l18n = {
     var next='Next';
 
     var exports = {
-        // DOM helpers
-        addRow: function(myTop, myPrefix) {
-            var myRow; var myCell1; var myCell2; var myCell3;
-            var myShown;
-            switch (myPrefix) {
-            case 'mg':myShown = nGatesShown; break;
-            case 'pr':myShown = nPryceShown; break;
-            case 'rua':myShown = nRuaShown; break;
-            default:
-            }
-            myRow = document.createElement('TR');
-            myRow.id=myPrefix+'Row'+myShown;
-            myRow.className='mgrow';
-            //myCell1 = document.createElement('TD');
-            //myCell1.id=myPrefix+'lbl'+myShown;
-            //myCell1.className='mglabel';
-            myCell2 = document.createElement('TD');
-            myCell2.id=myPrefix+'tm'+myShown;
-            myCell2.className='mglabel2';
-            myCell3 = document.createElement('TD');
-            myCell3.id=myPrefix+'txt'+myShown;
-            myCell3.className='mgtext';
-
-            //myCell1.appendChild(document.createTextNode('in ' + myShown + ' days'));
-            myCell2.appendChild(document.createTextNode('one'));
-            myCell3.appendChild(document.createTextNode('moment...'));
-            //myRow.appendChild(myCell1);
-            myRow.appendChild(myCell2);
-            myRow.appendChild(myCell3);
-
-            document.getElementById(myTop).appendChild(myRow);
-            switch (myPrefix) {
-            case 'mg':
-                nGatesShown++;
-                nGatesChanged = true; break;
-            case 'pr':
-                nPryceShown++;
-                nPryceChanged = true; break;
-            case 'rua':
-                nRuaShown++;
-                nRuaChanged = true; break;
-            default:
-            }
-            this.doSomething();
-        },
-        removeRow: function() {
-            //TODO:Check if rows can be removed
-            var myRow;
-
-            if (nGatesShown > 2) {
-                nGatesShown--;
-                myRow = document.getElementById('mgRow'+nGatesShown);
-                document.getElementById('mgtblbody0').removeChild(myRow);
-                nGatesChanged = true;
-            }
-        },
-        removeRow1: function() {
-            //TODO:Check if rows can be removed
-            var myRow;
-
-            if (nPryceShown > 2) {
-                nPryceShown--;
-                myRow = document.getElementById('prRow'+nPryceShown);
-                document.getElementById('prtblbody0').removeChild(myRow);
-                nPryceChanged = true;
-            }
-        },
-        removeRow2: function() {
-            //TODO:Check if rows can be removed
-            var myRow;
-
-            if (nRuaShown > 2) {
-                nRuaShown--;
-                myRow = document.getElementById('ruaRow'+nRuaShown);
-                document.getElementById('ruatblbody0').removeChild(myRow);
-                nRuaChanged = true;
-            }
-        },
         doSomething: function() {
             date = new Date();
 
@@ -292,11 +214,86 @@ var l18n = {
     };
     // Closure compiler exports. Used to preserve names on minification.
     window['mabiTimers'] = exports;
-    exports['addRow'] = exports.addRow;
-    exports['removeRow'] = exports.removeRow;
-    exports['removeRow1'] = exports.removeRow1;
-    exports['removeRow2'] = exports.removeRow2;
     exports['doSomething'] = exports.doSomething;
 })(l18n, window);
 
 window.setInterval(mabiTimers.doSomething, 200);
+
+// DOM helpers
+window['addRow'] = function(myTop, myPrefix) {
+    var myRow; var myCell1; var myCell2; var myCell3;
+    var myShown;
+    switch (myPrefix) {
+    case 'mg':myShown = nGatesShown; break;
+    case 'pr':myShown = nPryceShown; break;
+    case 'rua':myShown = nRuaShown; break;
+    default:
+    }
+    myRow = document.createElement('TR');
+    myRow.id=myPrefix+'Row'+myShown;
+    myRow.className='mgrow';
+    //myCell1 = document.createElement('TD');
+    //myCell1.id=myPrefix+'lbl'+myShown;
+    //myCell1.className='mglabel';
+    myCell2 = document.createElement('TD');
+    myCell2.id=myPrefix+'tm'+myShown;
+    myCell2.className='mglabel2';
+    myCell3 = document.createElement('TD');
+    myCell3.id=myPrefix+'txt'+myShown;
+    myCell3.className='mgtext';
+
+    //myCell1.appendChild(document.createTextNode('in ' + myShown + ' days'));
+    myCell2.appendChild(document.createTextNode('one'));
+    myCell3.appendChild(document.createTextNode('moment...'));
+    //myRow.appendChild(myCell1);
+    myRow.appendChild(myCell2);
+    myRow.appendChild(myCell3);
+
+    document.getElementById(myTop).appendChild(myRow);
+    switch (myPrefix) {
+    case 'mg':
+        nGatesShown++;
+        nGatesChanged = true; break;
+    case 'pr':
+        nPryceShown++;
+        nPryceChanged = true; break;
+    case 'rua':
+        nRuaShown++;
+        nRuaChanged = true; break;
+    default:
+    }
+    mabiTimers.doSomething();
+},
+window['removeRow'] = function() {
+    //TODO:Check if rows can be removed
+    var myRow;
+
+    if (nGatesShown > 2) {
+        nGatesShown--;
+        myRow = document.getElementById('mgRow'+nGatesShown);
+        document.getElementById('mgtblbody0').removeChild(myRow);
+        nGatesChanged = true;
+    }
+},
+window['removeRow1'] = function() {
+    //TODO:Check if rows can be removed
+    var myRow;
+
+    if (nPryceShown > 2) {
+        nPryceShown--;
+        myRow = document.getElementById('prRow'+nPryceShown);
+        document.getElementById('prtblbody0').removeChild(myRow);
+        nPryceChanged = true;
+    }
+},
+window['removeRow2'] = function() {
+    //TODO:Check if rows can be removed
+    var myRow;
+
+    if (nRuaShown > 2) {
+        nRuaShown--;
+        myRow = document.getElementById('ruaRow'+nRuaShown);
+        document.getElementById('ruatblbody0').removeChild(myRow);
+        nRuaChanged = true;
+    }
+}
