@@ -4,7 +4,7 @@ function addRow(myTop, myPrefix) {
     var myShown;
     switch (myPrefix) {
     case 'mg':myShown = nGatesShown; break;
-    case 'pr':myShown = nPryceShown; break;
+    case 'pr':myShown = nPriceShown; break;
     case 'rua':myShown = nRuaShown; break;
     default:
     }
@@ -34,8 +34,8 @@ function addRow(myTop, myPrefix) {
         nGatesShown++;
         nGatesChanged = true; break;
     case 'pr':
-        nPryceShown++;
-        nPryceChanged = true; break;
+        nPriceShown++;
+        nPriceChanged = true; break;
     case 'rua':
         nRuaShown++;
         nRuaChanged = true; break;
@@ -56,11 +56,11 @@ function removeRow() {
 function removeRow1() {
     var myRow;
 
-    if (nPryceShown > 2) {
-        nPryceShown--;
-        myRow = document.getElementById('prRow'+nPryceShown);
+    if (nPriceShown > 2) {
+        nPriceShown--;
+        myRow = document.getElementById('prRow'+nPriceShown);
         document.getElementById('prtblbody0').removeChild(myRow);
-        nPryceChanged = true;
+        nPriceChanged = true;
     }
 }
 function removeRow2() {
@@ -81,7 +81,7 @@ function formatTime(hours, minutes) {
 }
 
 var nGatesShown = 6;
-var nPryceShown = 2;
+var nPriceShown = 2;
 var nRuaShown = 2;
 
 function updateCells(items, timePrefix, textPrefix) {
@@ -122,12 +122,16 @@ function doSomething() {
     // document.getElementById('date').firstChild.nodeValue = 'Day '+ erinnDay;
 
     var moonGates = mabiTimers.getMoonGates(serverTime, nGatesShown);
-    var pryceLocations = mabiTimers.getPryceLocations(serverTime, nPryceShown);
+    var priceLocations = mabiTimers.getPriceLocations(serverTime, nPriceShown);
     var ruaStatuses = mabiTimers.getRuaStatuses(serverTime, nRuaShown);
 
     updateCells(moonGates, 'mgtm', 'mgtxt');
-    updateCells(pryceLocations, 'prtm', 'prtxt');
+    updateCells(priceLocations, 'prtm', 'prtxt');
     updateCells(ruaStatuses, 'ruatm', 'ruatxt');
+
+    var nextCeo = mabiTimers.getNextCeoMoonGate(serverTime);
+    document.getElementById('mgtxtceo').firstChild.nodeValue =
+        nextCeo + (nextCeo == 1 ? ' day' : ' days');
 }
 
 window.setInterval(doSomething, 200);
